@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Account Registration</title>
+</head>
+
+<body>
+
+  <fieldset>
+    <legend class="headline">Register sign up</legend>
+    <form class="register-form">
+
+      <div class="inputs">
+        <label id="first-name-label">First name:</label>
+        <input type="text" id="first-name" placeholder="First name" class="required">
+
+        <label id="last-name-label">Last name:</label>
+        <input type="text" id="last-name" placeholder="Last name" class="required">
+
+        <label id="username-label">Username:</label>
+        <input type="text" id="username" placeholder="username" class="required">
+
+        <label id="email-label">E-mail:</label>
+        <input type="email" id="email" placeholder="example@examp.le" class="required">
+
+        <label id="password-label">Password:</label>
+        <input type="password" id="password" placeholder="atleast 8 characters long" class="required">
+
+        <label id="confirm-password-label">Confirm password:</label>
+        <input type="password" id="confirm-password" placeholder="atleast 8 characters long" class="required">
+
+        <label id="news-label">Would you like to get news updates sent to you?</label>
+        <input type="checkbox" id="news">
+      </div>
+
+      <div class="finished">
+        <button class="finished-button" type="submit" disabled>Finish!</button>
+      </div>
+    </form>
+  </fieldset>
+
+  <script src="index.js"></script>
+</body>
+
+</html>

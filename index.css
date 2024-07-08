@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+fieldset {
+    max-width: fit-content;
+}
+
+.register-form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    max-width: fit-content;
+}
+
+input {
+    margin-bottom: 1rem;
+    &.valid{
+        border-color: green;
+    }
+    &.invalid{
+        border-color: red;
+    }
+}
+
+button {
+    background-color: green;
+    &:disabled {
+        background-color: gray;
+        cursor: not-allowed;
+    }
+}
