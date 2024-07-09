@@ -1,7 +1,3 @@
-const button = document.querySelector(`.finished-button`);
-const form = document.querySelector(`.register-form`);
-const inputs = form.querySelectorAll(`.required`);
-
 const labels = [
     `first-name-label`,
     `last-name-label`,
@@ -28,8 +24,12 @@ for (let i = 0; i < labels.length; i++) {
     });
 }
 
+//Allegedly good practice to wait until all DOM content is loaded before starting with scripts.
 document.addEventListener(`DOMContentLoaded`, () => {
-
+    const button = document.querySelector(`.finished-button`);
+    const form = document.querySelector(`.register-form`);
+    const inputs = form.querySelectorAll(`.required`);
+    
     const validateInput = (input) => {
         let isValid = false;
 
@@ -37,10 +37,18 @@ document.addEventListener(`DOMContentLoaded`, () => {
             if (input.value.length >= 8) {
                 isValid = true;
             }
+            //Validates the confirm-password field when a change is done to the password field.
+            const confirmPassword = document.querySelector(`#confirm-password`)
+            if (confirmPassword.value !== input.value){
+                confirmPassword.classList.add(`invalid`);
+                confirmPassword.classList.remove(`valid`);
+            } else if (confirmPassword.value === input.value && confirmPassword.value.length >= 8) {
+                confirmPassword.classList.remove(`invalid`);
+                confirmPassword.classList.add(`valid`);
+            }
         } else if (input.id === `confirm-password`) {
             const pw = document.querySelector(`#password`).value;
             isValid = input.value === pw && input.value.length >= 8;
-
         } else if (input.id === `email`) {
             //Validation copied from ChatGPT. The regex should validate that the input is in the correct format
             // as in text@text.text
@@ -66,9 +74,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
     });
 });
 
-console.log(inputs[0])
-
-form.addEventListener(`submit`, (event) => {
+document.querySelector(`.register-form`).addEventListener(`submit`, (event) => {
     event.preventDefault();
 
     const firstname = document.querySelector(`#first-name`);
@@ -84,7 +90,7 @@ form.addEventListener(`submit`, (event) => {
     const passwordValue = password.value;
     const newsValue = news.checked;
 
-    const user = {
+    const registrationData = {
         name: nameValue,
         username: usernameValue,
         email: emailValue,
@@ -92,7 +98,8 @@ form.addEventListener(`submit`, (event) => {
         wantsNews: newsValue
     }
 
-    console.log(user);
+    console.log(registrationData);
 })
+
 
 

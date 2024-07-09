@@ -1,3 +1,8 @@
+html {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(254, 255, 210);
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -23,18 +28,37 @@ fieldset {
 
 input {
     margin-bottom: 1rem;
-    &.valid{
+    background-color: rgb(254, 255, 210);
+
+    &.valid {
+        background-color: rgb(254, 255, 210);
+        ;
         border-color: green;
+
     }
-    &.invalid{
+
+    &.invalid {
+        background-color: lightcoral;
         border-color: red;
+    }
+
+    &:active,
+    &:valid {
+        background-color: rgb(254, 255, 210);
     }
 }
 
 button {
-    background-color: green;
+    background-color: rgb(255, 191, 120);
+    border-radius: 5px;
+    border: solid black 0px;
+    width: 15rem;
+    height: 3rem;
+
     &:disabled {
         background-color: gray;
         cursor: not-allowed;
     }
+
+
 }
