@@ -29,7 +29,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
     const button = document.querySelector(`.finished-button`);
     const form = document.querySelector(`.register-form`);
     const inputs = form.querySelectorAll(`.required`);
-    
+
     const validateInput = (input) => {
         let isValid = false;
 
@@ -39,7 +39,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
             }
             //Validates the confirm-password field when a change is done to the password field.
             const confirmPassword = document.querySelector(`#confirm-password`)
-            if (confirmPassword.value !== input.value){
+            if (confirmPassword.value !== '' && confirmPassword.value !== input.value) {
                 confirmPassword.classList.add(`invalid`);
                 confirmPassword.classList.remove(`valid`);
             } else if (confirmPassword.value === input.value && confirmPassword.value.length >= 8) {
