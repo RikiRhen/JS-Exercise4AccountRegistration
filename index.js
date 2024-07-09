@@ -51,7 +51,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
             isValid = input.value === pw && input.value.length >= 8;
         } else if (input.id === `email`) {
             //Validation copied from ChatGPT. The regex should validate that the input is in the correct format
-            // as in text@text.text
+            //as in text@text.text
             isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value);
         } else {
             isValid = input.value.trim() !== '';

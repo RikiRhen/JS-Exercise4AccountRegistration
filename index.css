@@ -10,6 +10,7 @@ body {
 
 fieldset {
     max-width: fit-content;
+    border-color: rgb(255, 125, 41);
 }
 
 .register-form {
@@ -59,6 +60,15 @@ button {
         background-color: gray;
         cursor: not-allowed;
     }
+}
 
-
+.headline, 
+#first-name-label,
+#last-name-label,
+#username-label,
+#email-label,
+#password-label,
+#confirm-password-label,
+#news-label{
+    color: rgb(255, 125, 41)
 }
